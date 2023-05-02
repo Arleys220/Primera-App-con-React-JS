@@ -1,17 +1,20 @@
 import CartWidget from "../CardWidget/Cardwidget"
+import { NavLink, Link } from "react-router-dom"
 
 const NavBar = () => {
     return(
-        <nav>
+        <nav className="NavBar">
+            <Link to ='/' >
             <h3>
                 Front end Store
             </h3>
-            <div>
-                <button>Html</button>
-                <button>Css</button>
-                <button>JavaScript</button>
-                <button>React Js</button>
-                <button> Angular Js</button>
+            </Link>
+            <div className="Categorias">
+                <NavLink to={`/categoria/Lenguajes`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option' }>JavaScript</NavLink>
+                <NavLink to={`/Frenworks/ReactJs`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option' }>ReactJs</NavLink>
+                <NavLink to={`/Frenworks/AngularJs`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option' }>AngularJs</NavLink>
+                <NavLink to={`/Frenworks/NodeJs`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option' }>NodeJs</NavLink>
+                
             </div>
             <CartWidget />
         </nav>
